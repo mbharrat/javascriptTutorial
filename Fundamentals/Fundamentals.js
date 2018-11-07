@@ -11,7 +11,7 @@
 	console.log("This was from inside the {}: "+test);
 }
 
-//test is scoped to inside hose brackets!
+//test is scoped to inside those brackets!
 
 console.log("This was from outside the {}: "+test);
 **********************************************************************************/
