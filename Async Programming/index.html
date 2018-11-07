@@ -1,6 +1,7 @@
 <html>
 	<header>
 		<title>Async</title>
+		<script src='PromisesAsync.js'></script>
 		<script src='Async.js'></script>
 	</header>
 	<body>
@@ -8,4 +9,15 @@
 			<h1>Testing Asynchronous Programming</h1>
 		</div>
 	</body>
+	<script>
+		console.log("this is from script tag in html");
+		//this captures the message sent as resolve in second promise
+		add(willGetCandy, showFriends).then((message)=>{
+				console.log(message);
+		})
+		.catch((error)=>{
+				console.log(error);
+
+		});
+	</script>
 </html>

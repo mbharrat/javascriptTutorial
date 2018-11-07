@@ -4,7 +4,8 @@
 var isHalloween = true;
 
 //promise
-var willGetCandy = new Promise(
+function willGetCandy(){
+	return new Promise(
 	(resolve, reject) =>{
 		if(isHalloween) {
 			var candy = {
@@ -21,10 +22,11 @@ var willGetCandy = new Promise(
 
 
 );
+}
 
 //second promise for chaining demo
 //this promise takes in the resolve output
-var showFriends = (candy) => {
+function showFriends (candy){
 	return new Promise(
 		(resolve, reject)=>{
 			var message="Hey buddy I have "+candy.count+" pieces of "+candy.type+".";
@@ -35,23 +37,6 @@ var showFriends = (candy) => {
 };
 
 
-
-//test promise
-
-var didGetCandy = () => {
-	console.log("this is before I asked someone if it's Halloween");
-	willGetCandy
-	.then(showFriends)
-	.then((fulfilled) =>{
-		console.log(fulfilled)
-	}).catch((error) =>{
-		console.log(error.message);
-	});
-	console.log("this is after I asked and I did stuff while waiting.")
-}
-
-
-didGetCandy();
 
 
 
